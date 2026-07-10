@@ -78,32 +78,28 @@ async function addDomain() {
     setDomainError("");
     return;
   }
-  let granted = false;
+  // 只发起权限申请。域名写入由 background 监听 permissions.onAdded 完成，
+  // popup 靠 storage.onChanged 刷新——因为权限确认框弹出时 popup 会被关闭，
+  // 不能把写入依赖在 request() 之后的代码里。
   try {
-    granted = await chrome.permissions.request({ origins: originsFor(d) });
+    const granted = await chrome.permissions.request({ origins: originsFor(d) });
+    if (granted) {
+      domainInput.value = "";
+      setDomainError("");
+    } else {
+      setDomainError("未授权该域名，规则不会对它生效");
+    }
   } catch (e) {
     setDomainError("权限申请失败");
-    return;
   }
-  if (!granted) {
-    setDomainError("未授权该域名，规则不会对它生效");
-    return;
-  }
-  config.domains.push(d);
-  domainInput.value = "";
-  setDomainError("");
-  render();
-  save();
 }
 
 async function removeDomain(d) {
-  config.domains = config.domains.filter((x) => x !== d);
-  render();
-  save();
+  // 只撤销权限。域名从配置移除由 background 监听 permissions.onRemoved 完成。
   try {
     await chrome.permissions.remove({ origins: originsFor(d) });
   } catch (e) {
-    // 忽略：域名已从配置移除，规则不再生效即达目的
+    setDomainError("移除权限失败");
   }
 }
 
@@ -183,6 +179,16 @@ addBtn.addEventListener("click", () => {
 addDomainBtn.addEventListener("click", addDomain);
 domainInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") addDomain();
+});
+
+// background 经权限事件更新 config.domains 后，storage 变化在此刷新域名区。
+// 就地更新 config.domains（不替换 config 对象，保留 header 行事件闭包），
+// 且只重渲染域名区，避免打断正在编辑的 header 输入焦点。
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area !== "local" || !changes.config) return;
+  const nc = changes.config.newValue;
+  config.domains = nc && Array.isArray(nc.domains) ? nc.domains : [];
+  renderDomains();
 });
 
 load();
