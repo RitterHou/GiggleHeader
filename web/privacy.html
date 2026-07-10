@@ -5,89 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GiggleHeader 隐私权政策 / Privacy Policy</title>
 <style>
-  :root { color-scheme: light dark; }
-  * { box-sizing: border-box; }
   body {
-    margin: 0; padding: 40px 20px;
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", Roboto, sans-serif;
-    line-height: 1.7; color: #1f2328; background: #f6f8fa;
+    max-width: 680px; margin: 40px auto; padding: 0 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", sans-serif;
+    font-size: 15px; line-height: 1.7; color: #222; background: #fff;
   }
-  .wrap { max-width: 760px; margin: 0 auto; background: #fff; border: 1px solid #e5e9ef;
-    border-radius: 14px; padding: 40px 44px; box-shadow: 0 6px 24px rgba(30,50,90,.06); }
-  header { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
-  header .logo { width: 46px; height: 46px; border-radius: 11px;
-    background: linear-gradient(135deg, #1f6feb, #14b88a); flex: 0 0 auto; }
-  h1 { font-size: 24px; margin: 0; letter-spacing: -.3px; }
-  .updated { color: #8a929b; font-size: 13px; margin: 4px 0 28px; }
-  h2 { font-size: 18px; margin: 32px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #eaeef2; }
-  h3 { font-size: 15px; margin: 20px 0 8px; }
-  p { margin: 10px 0; }
-  ul { margin: 10px 0; padding-left: 22px; }
-  li { margin: 6px 0; }
-  code { background: #f0f3f6; padding: 1px 6px; border-radius: 5px; font-size: 13px;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
-  strong { font-weight: 650; }
-  .lang-note { color: #8a929b; font-size: 13px; }
-  a { color: #1f6feb; }
-  hr { border: none; border-top: 1px solid #eaeef2; margin: 40px 0; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #0d1117; color: #e6edf3; }
-    .wrap { background: #161b22; border-color: #30363d; box-shadow: none; }
-    h2, h3 { border-color: #30363d; }
-    code { background: #21262d; }
-    .updated, .lang-note { color: #8b949e; }
-  }
+  h1 { font-size: 20px; }
+  h2 { font-size: 17px; margin-top: 32px; }
+  h3 { font-size: 15px; margin-top: 20px; }
+  .updated { color: #666; font-size: 13px; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: 13px; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 32px 0; }
+  a { color: #06c; }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="logo"></div>
-      <h1>GiggleHeader 隐私权政策 / Privacy Policy</h1>
-    </header>
-    <div class="updated">最后更新 / Last updated: 2026-07-10</div>
+  <h1>GiggleHeader 隐私权政策 / Privacy Policy</h1>
+  <p class="updated">最后更新 / Last updated: 2026-07-10</p>
 
-    <section>
-      <h2>简体中文</h2>
-      <p>GiggleHeader 是一个纯本地运行的开发者工具，用于修改浏览器发出的 HTTP 请求头。</p>
-      <p><strong>我们不收集任何数据。</strong> 具体而言：</p>
-      <ul>
-        <li>本扩展<strong>不收集、不存储、不传输</strong>任何个人信息或用户数据。</li>
-        <li>你配置的生效域名和请求头规则，<strong>仅保存在你本机的 <code>chrome.storage.local</code></strong>，不会上传或同步到任何服务器。</li>
-        <li>本扩展<strong>不发起任何网络请求</strong>（除了浏览器本身发出、被你的规则修改的请求），<strong>不包含任何分析、统计、追踪或第三方代码</strong>。</li>
-        <li>本扩展<strong>无法读取</strong>你的请求内容——它基于 Manifest V3 的 <code>declarativeNetRequest</code> API，只声明"如何修改请求头"，由浏览器执行。</li>
-      </ul>
-      <h3>权限说明</h3>
-      <ul>
-        <li><code>declarativeNetRequest</code>：用于按你的配置修改 HTTP 请求头。</li>
-        <li><code>storage</code>：用于在本机保存你的配置。</li>
-        <li>可选主机权限（optional host permissions）：仅当你在扩展中主动添加某个域名时，才向该域名申请权限，用于对其请求生效。</li>
-      </ul>
-      <p>如需卸载，直接在 Chrome 扩展页移除即可，本机数据随之清除。</p>
-      <p>联系方式：<a href="mailto:ray.h@giggleacademy.com">ray.h@giggleacademy.com</a></p>
-    </section>
+  <h2>简体中文</h2>
+  <p>GiggleHeader 是一个纯本地运行的开发者工具，用于修改浏览器发出的 HTTP 请求头。</p>
+  <p><strong>我们不收集任何数据。</strong>具体而言：</p>
+  <ul>
+    <li>本扩展不收集、不存储、不传输任何个人信息或用户数据。</li>
+    <li>你配置的生效域名和请求头规则，仅保存在你本机的 <code>chrome.storage.local</code>，不会上传或同步到任何服务器。</li>
+    <li>本扩展不发起任何网络请求（除了浏览器本身发出、被你的规则修改的请求），不包含任何分析、统计、追踪或第三方代码。</li>
+    <li>本扩展无法读取你的请求内容——它基于 Manifest V3 的 <code>declarativeNetRequest</code> API，只声明"如何修改请求头"，由浏览器执行。</li>
+  </ul>
+  <h3>权限说明</h3>
+  <ul>
+    <li><code>declarativeNetRequest</code>：用于按你的配置修改 HTTP 请求头。</li>
+    <li><code>storage</code>：用于在本机保存你的配置。</li>
+    <li>可选主机权限：仅当你在扩展中主动添加某个域名时，才向该域名申请权限，用于对其请求生效。</li>
+  </ul>
+  <p>如需卸载，直接在 Chrome 扩展页移除即可，本机数据随之清除。</p>
+  <p>联系方式：<a href="mailto:derobukal@gmail.com">derobukal@gmail.com</a></p>
 
-    <hr>
+  <hr>
 
-    <section>
-      <h2>English</h2>
-      <p>GiggleHeader is a fully local developer tool for modifying outgoing HTTP request headers.</p>
-      <p><strong>We collect no data.</strong> Specifically:</p>
-      <ul>
-        <li>This extension <strong>does not collect, store, or transmit</strong> any personal information or user data.</li>
-        <li>The domains and header rules you configure are stored <strong>only in your local <code>chrome.storage.local</code></strong> and are never uploaded or synced to any server.</li>
-        <li>This extension <strong>makes no network requests</strong> (other than the browser's own requests that your rules modify) and contains <strong>no analytics, tracking, or third-party code</strong>.</li>
-        <li>This extension <strong>cannot read</strong> your request contents — it uses the Manifest V3 <code>declarativeNetRequest</code> API, declaring only <em>how</em> to modify headers, executed by the browser.</li>
-      </ul>
-      <h3>Permissions</h3>
-      <ul>
-        <li><code>declarativeNetRequest</code>: to modify HTTP request headers per your configuration.</li>
-        <li><code>storage</code>: to save your configuration locally.</li>
-        <li>Optional host permissions: requested only when you explicitly add a domain, to apply rules to that domain's requests.</li>
-      </ul>
-      <p>To uninstall, remove the extension from Chrome's extensions page; local data is cleared accordingly.</p>
-      <p>Contact: <a href="mailto:ray.h@giggleacademy.com">ray.h@giggleacademy.com</a></p>
-    </section>
-  </div>
+  <h2>English</h2>
+  <p>GiggleHeader is a fully local developer tool for modifying outgoing HTTP request headers.</p>
+  <p><strong>We collect no data.</strong> Specifically:</p>
+  <ul>
+    <li>This extension does not collect, store, or transmit any personal information or user data.</li>
+    <li>The domains and header rules you configure are stored only in your local <code>chrome.storage.local</code> and are never uploaded or synced to any server.</li>
+    <li>This extension makes no network requests (other than the browser's own requests that your rules modify) and contains no analytics, tracking, or third-party code.</li>
+    <li>This extension cannot read your request contents — it uses the Manifest V3 <code>declarativeNetRequest</code> API, declaring only <em>how</em> to modify headers, executed by the browser.</li>
+  </ul>
+  <h3>Permissions</h3>
+  <ul>
+    <li><code>declarativeNetRequest</code>: to modify HTTP request headers per your configuration.</li>
+    <li><code>storage</code>: to save your configuration locally.</li>
+    <li>Optional host permissions: requested only when you explicitly add a domain, to apply rules to that domain's requests.</li>
+  </ul>
+  <p>To uninstall, remove the extension from Chrome's extensions page; local data is cleared accordingly.</p>
+  <p>Contact: <a href="mailto:derobukal@gmail.com">derobukal@gmail.com</a></p>
 </body>
 </html>
