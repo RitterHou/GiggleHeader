@@ -8,14 +8,20 @@ const ALL_RESOURCE_TYPES = [
 /**
  * 把用户配置翻译成 declarativeNetRequest 动态规则数组。
  * 纯函数：不读写 storage、不调用 chrome API。
+ * 规则只对 config.domains 列表内的域名（及其子域名）生效；域名为空则不产生规则。
  *
- * @param {{enabled: boolean, headers: Array<{id:string,name:string,value:string,enabled:boolean,op:string}>}} config
+ * @param {{enabled: boolean, domains: string[], headers: Array<{id:string,name:string,value:string,enabled:boolean,op:string}>}} config
  * @returns {Array<object>} DNR 规则数组
  */
 export function buildRules(config) {
-  if (!config || !config.enabled || !Array.isArray(config.headers)) {
+  if (!config || !config.enabled || !Array.isArray(config.headers) || !Array.isArray(config.domains)) {
     return [];
   }
+
+  const domains = [...new Set(
+    config.domains.filter((d) => typeof d === "string" && d.trim() !== "")
+  )];
+  if (domains.length === 0) return [];
 
   const rules = [];
   for (const h of config.headers) {
@@ -37,6 +43,7 @@ export function buildRules(config) {
         requestHeaders: [headerSpec],
       },
       condition: {
+        requestDomains: domains,
         resourceTypes: ALL_RESOURCE_TYPES,
       },
     });
