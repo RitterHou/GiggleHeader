@@ -1,6 +1,6 @@
 import { buildRules } from "./src/rules.js";
 
-const DEFAULT_CONFIG = { enabled: true, headers: [] };
+const DEFAULT_CONFIG = { enabled: true, domains: [], headers: [] };
 
 // 在扩展图标上显示当前生效的规则条数；为 0 时清空角标。
 async function updateBadge(count) {
