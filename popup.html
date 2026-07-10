@@ -12,6 +12,18 @@
       <span class="slider"></span>
     </label>
   </header>
+
+  <section class="domains-section">
+    <div class="section-label">生效域名</div>
+    <div id="domains" class="domains"></div>
+    <div class="domain-add">
+      <input type="text" id="domain-input" class="domain-input" placeholder="域名，如 example.com">
+      <button id="add-domain" class="add-domain-btn">添加</button>
+    </div>
+    <div id="domain-error" class="domain-error"></div>
+  </section>
+
+  <div class="section-label">请求头</div>
   <div id="rows" class="rows"></div>
   <button id="add-row" class="add-btn">+ 添加一行</button>
   <script type="module" src="popup.js"></script>

@@ -51,3 +51,20 @@ body {
   cursor: pointer; font-size: 13px; color: #1f2328;
 }
 .add-btn:hover { background: #eef1f4; }
+.section-label { font-size: 12px; font-weight: 600; color: #57606a; margin: 4px 0 8px; }
+.domains-section { margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #eaeef2; }
+.domains { display: flex; flex-direction: column; gap: 5px; margin-bottom: 8px; }
+.domain-row { display: flex; align-items: center; justify-content: space-between; gap: 6px;
+  background: #f6f8fa; border: 1px solid #eaeef2; border-radius: 6px; padding: 4px 6px 4px 10px; }
+.domain-name { font-size: 12px; color: #1f2328; word-break: break-all; }
+.domain-del { flex: 0 0 20px; height: 20px; border: none; background: transparent;
+  color: #cf222e; cursor: pointer; font-size: 13px; border-radius: 4px; }
+.domain-del:hover { background: #ffebe9; }
+.domain-hint { font-size: 12px; color: #9aa0a6; padding: 4px 2px; }
+.domain-add { display: flex; gap: 6px; }
+.domain-input { flex: 1 1 0; min-width: 0; height: 28px; border: 1px solid #d0d7de;
+  border-radius: 6px; padding: 0 8px; font-size: 12px; }
+.add-domain-btn { flex: 0 0 auto; height: 28px; padding: 0 12px; border: 1px solid #d0d7de;
+  border-radius: 6px; background: #f6f8fa; cursor: pointer; font-size: 12px; }
+.add-domain-btn:hover { background: #eef1f4; }
+.domain-error { font-size: 11px; color: #cf222e; min-height: 14px; margin-top: 4px; }
