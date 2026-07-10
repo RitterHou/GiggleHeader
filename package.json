@@ -1,0 +1,10 @@
+{
+  "name": "giggle-header",
+  "version": "1.0.0",
+  "description": "纯本地修改 HTTP 请求头的 Chrome 扩展，零数据收集。",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  }
+}
