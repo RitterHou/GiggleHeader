@@ -30,12 +30,14 @@ body {
 
 .rows { display: flex; flex-direction: column; gap: 6px; }
 .row { display: flex; align-items: center; gap: 6px; }
+.row > input[type="checkbox"] { flex: 0 0 auto; margin: 0; }
 .row select, .row input[type="text"] {
   height: 28px; border: 1px solid #d0d7de; border-radius: 6px; padding: 0 6px; font-size: 12px;
+  min-width: 0;
 }
-.row select { flex: 0 0 64px; }
-.row input.name { flex: 1 1 40%; }
-.row input.value { flex: 1 1 40%; }
+.row select { flex: 0 0 auto; }
+.row input.name { flex: 1 1 0; }
+.row input.value { flex: 1 1 0; }
 .row input.value:disabled { background: #f6f8fa; color: #9aa0a6; }
 .row .del {
   flex: 0 0 24px; height: 24px; border: none; background: transparent;
